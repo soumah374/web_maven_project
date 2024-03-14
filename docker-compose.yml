@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  postgres:
+    hostname: postgres
+    image: postgres:14.4
+    container_name: db
+    environment:
+      POSTGRES_USER: "WEB_DB"
+      POSTGRES_PASSWORD: "WEB_DB"
+      POSTGRES_DB: "WEB_DB"
+    volumes:
+      - ./db-data:/var/lib/postgresql/db-data
+    ports:
+      - "5433:5432"
